@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
   margin: 0;
@@ -19,4 +21,45 @@ code {
 
 .robotofont {
   font-family: 'Roboto Slab', serif;
+}
+
+.title {
+  font-family: 'Gluten', serif;
+  font-size: 74px;
+  color: #FFFFFF;
+}
+
+.bg-footer {
+  background-color: #ff686b;
+}
+
+.bg-about {
+  background-color: #84dcc6;
+}
+
+.about-fontstyle {
+  font-family: 'Roboto', serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-family: 'Gluten', serif;
+  font-size: 35px;
+  color: #FFFFFF;
+}
+
+#title {
+  width: 7ch;
+  white-space: wrap;
+}
+
+#intro {
+  padding: 0
+}
+
+.subtitle2 {
+  font-family: 'Gluten', serif;
+  font-size: 30px;
+  color: #ff686b;
 }
