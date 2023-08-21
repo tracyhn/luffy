@@ -29,12 +29,22 @@ code {
   color: #FFFFFF;
 }
 
-.bg-footer {
-  background-color: #ff686b;
+.subtitle {
+  font-family: 'Gluten', serif;
+  font-size: 35px;
+  color: #FFFFFF;
 }
 
-.bg-about {
-  background-color: #84dcc6;
+.review-fontstyle{
+  font-family: 'Gluten', serif;
+  font-size: 20px;
+  color: #ff686b;
+}
+
+.services-fontstyle{
+  font-family: 'Gluten', serif;
+  font-size: 20px;
+  color: #84dcc6;
 }
 
 .about-fontstyle {
@@ -43,10 +53,19 @@ code {
   color: #ffffff;
 }
 
-.subtitle {
-  font-family: 'Gluten', serif;
-  font-size: 35px;
-  color: #FFFFFF;
+.reviewfont{
+  color: #ff686b;
+}
+.bg-service {
+	background-color: #ffa69e;
+}
+
+.bg-footer {
+  background-color: #ff686b;
+}
+
+.bg-about {
+  background-color: #84dcc6;
 }
 
 #title {
@@ -55,11 +74,6 @@ code {
 }
 
 #intro {
-  padding: 0
+  padding: 0;
 }
 
-.subtitle2 {
-  font-family: 'Gluten', serif;
-  font-size: 30px;
-  color: #ff686b;
-}

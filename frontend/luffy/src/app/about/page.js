@@ -1,61 +1,198 @@
 import { useState } from 'react'
 import { Dialog, Disclosure } from '@headlessui/react'
 import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import {
-  ArrowPathIcon,
-  CheckIcon,
-  CloudArrowUpIcon,
-  Cog6ToothIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from '@heroicons/react/20/solid'
+import { 
+  GiDogHouse,
+  GiDogBowl,
+} from 'react-icons/gi';
+import {FaShoePrints} from 'react-icons/fa';
+import{RiMedicineBottleFill} from 'react-icons/ri';
+import{BiTennisBall} from 'react-icons/bi';
+import {TbCameraHeart} from 'react-icons/tb';
 import img1 from '../../images/Luffy__2017_2.jpg';
 import img2 from '../../images/Luffy__1992_BW.jpg';
+import theo from '../../images/theo.PNG';
+import ella from '../../images/ella.PNG';
+import mega from '../../images/mega.PNG';
+import simba from '../../images/simba.jpeg';
+import kona from '../../images/kona.PNG';
+import buddy from '../../images/buddy.png';
+import haven from '../../images/haven.PNG';
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Book a Service', href: '#' },
-  { name: 'FAQ', href: '#' },
+  { name: 'Home', href: '#', scrollFunction: scrollToHome},
+  { name: 'Services', href: '#', scrollFunction: scrollToServices},
+  { name: 'About', href: '#', scrollFunction: scrollToAbout},
+  { name: 'Reviews', href: '#', scrollFunction: scrollToReviews},
+  { name: 'FAQ', href: '#', scrollFunction: scrollToFaq},
+  { name: 'Book', href: '#', scrollFunction: scrollToServices},
 ]
+
+const services = [
+  {
+    body: 'Potty breaks every 2-3 hours.',
+    icon: GiDogHouse,
+  },
+  {
+    body: 'Daily walks (weather permitting).',
+    icon: FaShoePrints,
+  },
+  {
+    body: 'Consistent feeding schedule.',
+    icon: GiDogBowl,
+  },
+  {
+    body: 'Oral administration of medication (if instructed).',
+    icon: RiMedicineBottleFill,
+  },
+  {
+    body: 'Daily updates (with photos and videos).',
+    icon: TbCameraHeart,
+  },
+  {
+    body: 'Mental and physical enrichment.',
+    icon: BiTennisBall,
+  },
+]
+
+const testimonials = [
+  {
+    body: "I've trusted Tracy with my dog multiple times. My dog loves his time with her. She is the best dog sitter and would recommend her to any one!",
+    author: {
+      name: 'Tiffany L.',
+      handle: 'Theo',
+      imageUrl: theo,
+    },
+  },
+  {
+    body: '[Khoa] and Tracy were fantastic and were very attentive to Ella. We will now always use them to watch Ella when we go on vacation. I highly recommend!!',
+    author: {
+      name: 'Thomas C.',
+      handle: 'Ella',
+      imageUrl: ella,
+    },
+  },
+  {
+    body: 'Fantastic sitters- I am a repeat client. They are attentive and have great communication. Their dogs are sweet mannered with my dog and I know they give them great care',
+    author: {
+      name: 'Brittany O.',
+      handle: 'Haven',
+      imageUrl: haven,
+    },
+  },
+  {
+    body: 'Wonderful people with great understanding and compassion.',
+    author: {
+      name: 'Mayil S.',
+      handle: 'Buddy',
+      imageUrl: buddy,
+    },
+  },
+  {
+    body: 'Khoa and Tracy are awesome. Simba enjoyed playing with them and their puppies especially Luffy. We left Simba for a month and they were sending pictures and videos everyday.',
+    author: {
+      name: 'Surekha R.',
+      handle: 'Simba',
+      imageUrl: simba,
+    },
+  },
+  {
+    body: 'Great and sweet hosts, our furry boy love them, happy and excited to see them again and again.',
+    author: {
+      name: 'Iris H.',
+      handle: 'Mega',
+      imageUrl: mega,
+    },
+  },
+  // More testimonials...
+]
+
 const faqs = [
   {
-    question: "Do you have a breed restriction?",
-    answer:"We do not have a breed restriction. However, we do require that all dogs are under 40 pounds and are friendly with others.",
+    question: "Do you have a breed restrictions for dogs?",
+    answer: "No, we do not have any breed restrictions for dogs.",
   },
   {
-    question: "Do you take puppies?",
-    answer: "Unfortunately, do to our limited experience in caring for puppies, we will not be accepting puppy requests at this time.",
+    question: "What are the requirements for bringing my dog?",
+    answer: <div><p>To ensure a safe and enjoyable environment for everyone, we require the following:</p>
+    <ul>
+    <br></br>
+    <li>All dogs must be friendly in nature.</li>
+    <li>Dogs must weigh under 40 pounds.</li>
+    <li>Dogs must be up-to-date on their vaccinations.</li>
+    <li>Dogs must be on their monthly flea and tick preventions.</li>
+    </ul>
+    </div>
   },
   {
-    question:"",
-    answer:"",
+    question: "How many dogs do you accomodate for boarding at a time?",
+    answer: "To ensure a comfortable experience for both the dogs and us, we limit the number of dogs to two at a time.",
   },
   {
-    question:"",
-    answer: ""
+    question: "Will my dog potentially share accomodations with another dog if I'm boarding only one dog?",
+    answer: "Yes, if you are boarding a single dog, there is a possibility that your dog may be cohosted with another.",
   },
   {
-    question:"",
-    answer:"",
+    question: "What happens if my dog requires medical attention while in your care?",
+    answer: "If your dog requires medical attention, we will promptly take them to the veterinarian listed on file. Additionally, we will notify you immediately to keep you informed about your dog's well-being. Your dog's health and safety are our top priorities.",
   },
   {
-    question:"",
-    answer: ""
-  },
-  {
-    question:"",
-    answer:"",
+    question: "If my dog needs to visit the vet, who is responsible for the veterinary charges?",
+    answer: "For information regarding financial responsibility for veterinary charges in such situations, please refer to our Terms of Service and Agreement.",
   },
   // More questions...
 ]
 const footerNavigation = [
-    { name: 'Terms and Agreement', href: '#' }
+    { name: 'Terms of Service and Agreement', href: '#' }
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
+}
+
+function scrollToHome(event) {
+  event.preventDefault();  // prevent the default link click action
+
+  const target = document.getElementById("home-page");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function scrollToServices(event) {
+  event.preventDefault();  // prevent the default link click action
+
+  const target = document.getElementById("services-start");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function scrollToAbout(event) {
+  event.preventDefault();  // prevent the default link click action
+
+  const target = document.getElementById("about-start");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function scrollToReviews(event) {
+  event.preventDefault();  // prevent the default link click action
+
+  const target = document.getElementById("review-start");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function scrollToFaq(event) {
+  event.preventDefault();  // prevent the default link click action
+
+  const target = document.getElementById("faq-start");
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
 export default function About() {
@@ -64,7 +201,7 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* Header */}
-      <header className="absolute inset-x-0 top-0 z-50 bg-white">
+      <header className="absolute inset-x-0 top-0 z-50 bg-white sticky">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
@@ -88,15 +225,12 @@ export default function About() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-black">
+              <a onClick={item.scrollFunction} key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-black">
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-black">
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a>
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -149,7 +283,7 @@ export default function About() {
 
       <main>
         {/* Landing Section */}
-        <div className="relative isolate overflow-hidden bg-gray-900 pb-16 pt-14 sm:pb-20">
+        <div className="relative isolate overflow-hidden bg-gray-900 pb-16 pt-14 sm:pb-20" id="home-page">
           <img
             src={img1}
             alt=""
@@ -188,22 +322,37 @@ export default function About() {
         </div>
 
         {/* Services Section */}
-        <div className="flex-col items-center justify-center p-6 lg:px-8">
-          <h1 className="subtitle2">
-            Our Service
-          </h1>
-          <div class="h-56 grid grid-cols-3 gap-4 content-center ...">
-            <div>01</div>
-            <div>02</div>
-            <div>03</div>
-            <div>04</div>
-            <div>05</div>
-            <div>06</div>
+        <div className="bg-white py-24 sm:py-32" id="services-start">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight services-fontstyle">Our Services</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            What to expect during your pup's stay with us:
+          </p>
+        </div>
+        <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+          <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+            {services.map((services) => (
+              <div key={services.body} className="pt-8 sm:inline-block sm:w-full sm:px-4">
+                <figure className="rounded-2xl bg-service p-8 text-sm leading-6">
+                  <div className="flex items-center justify-center pb-2">
+                  <services.icon size={30} color="white"/>
+                  </div>
+                  <div>
+                    <blockquote className="robotofont text-white font-semibold">
+                      <p>{`${services.body}`}</p>
+                    </blockquote>
+                  </div>
+                </figure>
+              </div>
+            ))}
           </div>
         </div>
-
+      </div>
+    </div>
         {/* About Me Section */}
-        <div className="relative z-10 mt-32 bg-about pb-20 sm:mt-56 sm:pb-24 xl:pb-0">
+        <div id="about-start"></div>
+        <div className="relative z-10 mt-32 bg-about pb-0 sm:mt-56 sm:pb-24 xl:pb-0">
           <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
           </div>
           <div className="mx-auto flex max-w-7xl flex-col items-center gap-x-8 gap-y-10 px-6 sm:gap-y-8 lg:px-8 xl:flex-row xl:items-stretch">
@@ -235,8 +384,41 @@ export default function About() {
           </div>
         </div>
 
+        {/* Testimonial Section */}
+        <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8" id="review-start">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight review-fontstyle">Reviews</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            What do our clients think of us?
+          </p>
+        </div>
+        <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+          <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.author.handle} className="pt-8 sm:inline-block sm:w-full sm:px-4">
+                <figure className="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
+                  <blockquote className="text-gray-900">
+                    <p>{`“${testimonial.body}”`}</p>
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-x-4">
+                    <img className="h-10 w-10 rounded-full bg-gray-50" src={testimonial.author.imageUrl} alt="" />
+                    <div>
+                      <div className="font-semibold reviewfont">{testimonial.author.name}</div>
+                      <div className="text-gray-600">{`${testimonial.author.handle}`}</div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
         {/* FAQ section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
+        {/*<div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">*/}
+        <div id="faq-start">
           <div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
             <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">Frequently Asked Questions</h2>
             <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
@@ -257,7 +439,7 @@ export default function About() {
                         </Disclosure.Button>
                       </dt>
                       <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                        <p className="text-base leading-7 text-gray-600">{faq.answer}</p>
+                        <p className="text-base leading-7 text-gray-600 text-left">{faq.answer}</p>
                       </Disclosure.Panel>
                     </>
                   )}
