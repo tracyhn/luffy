@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { Dialog, Disclosure } from '@headlessui/react'
 import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { 
@@ -25,7 +26,6 @@ const navigation = [
   { name: 'About', href: '#', scrollFunction: scrollToAbout},
   { name: 'Reviews', href: '#', scrollFunction: scrollToReviews},
   { name: 'FAQ', href: '#', scrollFunction: scrollToFaq},
-  { name: 'Book', href: '#', scrollFunction: scrollToServices},
 ]
 
 const services = [
@@ -225,10 +225,13 @@ export default function About() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a onClick={item.scrollFunction} key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-black">
+              <Link onClick={item.scrollFunction} key={item.name} to={item.href} className="text-sm font-semibold leading-6 text-black">
                 {item.name}
-              </a>
+              </Link>
             ))}
+            <Link to='/booking' className="text-sm font-semibold leading-6 text-black"> 
+              Book
+            </Link>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           </div>
