@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/luffy/static/css/main.17a3619c.css",
-    "main.js": "/luffy/static/js/main.de7b050f.js",
+    "main.js": "/luffy/static/js/main.32cb8a36.js",
     "static/js/787.589317f1.chunk.js": "/luffy/static/js/787.589317f1.chunk.js",
-    "static/media/Luffy__2017_2.jpg": "/luffy/static/media/Luffy__2017_2.cb086bb7f24d2ef77ae6.jpg",
     "static/media/Luffy__1992_BW.jpg": "/luffy/static/media/Luffy__1992_BW.9386a553a6fffc80caea.jpg",
     "static/media/haven.PNG": "/luffy/static/media/haven.7ebed251f9a66ec439d4.PNG",
     "static/media/kona.PNG": "/luffy/static/media/kona.84cb0cade54a1c97d187.PNG",
@@ -11,15 +10,16 @@
     "static/media/ella.PNG": "/luffy/static/media/ella.c5982cd269422e894361.PNG",
     "static/media/theo.PNG": "/luffy/static/media/theo.1287b4095bf08c8dcb9a.PNG",
     "static/media/mega.PNG": "/luffy/static/media/mega.f10319c30d8f23da12da.PNG",
+    "static/media/Luffy__2017_2-min.jpg": "/luffy/static/media/Luffy__2017_2-min.124fc65c6a666b2f79f5.jpg",
     "static/media/simba.jpeg": "/luffy/static/media/simba.068bf73bb4663fedc2ad.jpeg",
     "static/media/logo.svg": "/luffy/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/luffy/index.html",
     "main.17a3619c.css.map": "/luffy/static/css/main.17a3619c.css.map",
-    "main.de7b050f.js.map": "/luffy/static/js/main.de7b050f.js.map",
+    "main.32cb8a36.js.map": "/luffy/static/js/main.32cb8a36.js.map",
     "787.589317f1.chunk.js.map": "/luffy/static/js/787.589317f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17a3619c.css",
-    "static/js/main.de7b050f.js"
+    "static/js/main.32cb8a36.js"
   ]
 }
