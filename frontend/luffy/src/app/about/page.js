@@ -10,7 +10,7 @@ import {FaShoePrints} from 'react-icons/fa';
 import{RiMedicineBottleFill} from 'react-icons/ri';
 import{BiTennisBall} from 'react-icons/bi';
 import {TbCameraHeart} from 'react-icons/tb';
-import img1 from '../../images/Luffy__2017_2.jpg';
+import img1 from '../../images/Luffy__2017_2-min.jpg';
 import img2 from '../../images/Luffy__1992_BW.jpg';
 import theo from '../../images/theo.PNG';
 import ella from '../../images/ella.PNG';
