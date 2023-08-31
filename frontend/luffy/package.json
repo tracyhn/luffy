@@ -2,7 +2,7 @@
   "name": "luffy",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gitnam.github.io/luffy",
+  "homepage": "https://luffyandfriends.com/",
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
