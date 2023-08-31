@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.17a3619c.css",
-    "main.js": "/static/js/main.64ccb58f.js",
+    "main.js": "/static/js/main.fc4766a0.js",
     "static/js/787.589317f1.chunk.js": "/static/js/787.589317f1.chunk.js",
     "static/media/Luffy__1992_BW.jpg": "/static/media/Luffy__1992_BW.9386a553a6fffc80caea.jpg",
     "static/media/haven.PNG": "/static/media/haven.7ebed251f9a66ec439d4.PNG",
@@ -15,11 +15,11 @@
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "main.17a3619c.css.map": "/static/css/main.17a3619c.css.map",
-    "main.64ccb58f.js.map": "/static/js/main.64ccb58f.js.map",
+    "main.fc4766a0.js.map": "/static/js/main.fc4766a0.js.map",
     "787.589317f1.chunk.js.map": "/static/js/787.589317f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17a3619c.css",
-    "static/js/main.64ccb58f.js"
+    "static/js/main.fc4766a0.js"
   ]
 }
